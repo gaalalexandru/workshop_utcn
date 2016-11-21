@@ -4,6 +4,7 @@
 ".\objects\switch.o"
 ".\objects\timer.o"
 ".\objects\display.o"
+".\objects\sensor.o"
 "..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk\driverlib.lib"
 ".\objects\startup_tm4c123.o"
 ".\objects\system_tm4c123.o"

@@ -7,3 +7,4 @@
 .\objects\main.o: timer.h
 .\objects\main.o: switch.h
 .\objects\main.o: display.h
+.\objects\main.o: sensor.h

@@ -11,6 +11,7 @@
 #include "timer.h"
 #include "switch.h"
 #include "display.h"
+#include "sensor.h"
 
 extern uint32_t Baud_Rate_Read;
 unsigned char Led_Color;
@@ -28,6 +29,7 @@ int main(void)
 	TIMER_Wide_0_init();
 	Switch_Init();
 	Display_Init();
+	Sensor_Init();
 	IntMasterEnable();	//Global interrupt enable
 	  
 	Display_NewLine();
