@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\demo_simple.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\demo_simple.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Nov 21 18:52:36 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon Nov 21 22:33:11 2016
 <BR><P>
 <H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -379,7 +379,7 @@ Global Symbols
 <P><STRONG><a name="[fc]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[87]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 68 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Display_Init &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1272,7 +1272,7 @@ Global Symbols
 
 <P><STRONG><a name="[10a]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d]"></a>ADC0SS3_Handler</STRONG> (Thumb, 126 bytes, Stack size 40 bytes, sensor.o(i.ADC0SS3_Handler))
+<P><STRONG><a name="[1d]"></a>ADC0SS3_Handler</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, sensor.o(i.ADC0SS3_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = ADC0SS3_Handler &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADCSequenceDataGet
@@ -1356,7 +1356,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9e]"></a>Display_Init</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, display.o(i.Display_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Display_Init &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = Display_Init &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTFIFOEnable
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTEnable
@@ -1400,7 +1400,7 @@ Global Symbols
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RGB_Led_Init
 </UL>
 
-<P><STRONG><a name="[2a]"></a>GPIOF_Handler</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, switch.o(i.GPIOF_Handler))
+<P><STRONG><a name="[2a]"></a>GPIOF_Handler</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, switch.o(i.GPIOF_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = GPIOF_Handler &rArr; TIMER_delay_No_Int &rArr; TIMER_reload_calculator &rArr; SysCtlClockGet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_delay_No_Int
@@ -1419,7 +1419,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch_Init
 </UL>
 
-<P><STRONG><a name="[c4]"></a>GPIOIntEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, gpio.o(i.GPIOIntEnable))
+<P><STRONG><a name="[c4]"></a>GPIOIntEnable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gpio.o(i.GPIOIntEnable))
 <BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch_Init
 </UL>
 
@@ -1431,8 +1431,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Switch_Init
 </UL>
 
-<P><STRONG><a name="[b0]"></a>GPIOPadConfigSet</STRONG> (Thumb, 314 bytes, Stack size 28 bytes, gpio.o(i.GPIOPadConfigSet))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = GPIOPadConfigSet
+<P><STRONG><a name="[b0]"></a>GPIOPadConfigSet</STRONG> (Thumb, 312 bytes, Stack size 24 bytes, gpio.o(i.GPIOPadConfigSet))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIOPadConfigSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPinTypeUART
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPinTypeGPIOInput
@@ -1441,12 +1441,12 @@ Global Symbols
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RGB_Led_Init
 </UL>
 
-<P><STRONG><a name="[a1]"></a>GPIOPinConfigure</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, gpio.o(i.GPIOPinConfigure))
+<P><STRONG><a name="[a1]"></a>GPIOPinConfigure</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, gpio.o(i.GPIOPinConfigure))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_Init
 </UL>
 
 <P><STRONG><a name="[ae]"></a>GPIOPinTypeGPIOInput</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, gpio.o(i.GPIOPinTypeGPIOInput))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIOPinTypeGPIOInput &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = GPIOPinTypeGPIOInput &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPadConfigSet
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIODirModeSet
@@ -1455,7 +1455,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b1]"></a>GPIOPinTypeGPIOOutput</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, gpio.o(i.GPIOPinTypeGPIOOutput))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIOPinTypeGPIOOutput &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = GPIOPinTypeGPIOOutput &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPadConfigSet
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIODirModeSet
@@ -1464,7 +1464,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a2]"></a>GPIOPinTypeUART</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, gpio.o(i.GPIOPinTypeUART))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIOPinTypeUART &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPadConfigSet
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIODirModeSet
@@ -1526,7 +1526,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b6]"></a>RGB_Led_Init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, led.o(i.RGB_Led_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = RGB_Led_Init &rArr; GPIOPinTypeGPIOOutput &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = RGB_Led_Init &rArr; GPIOPinTypeGPIOOutput &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlPeripheralEnable
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPinWrite
@@ -1556,7 +1556,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[c1]"></a>Switch_Init</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, switch.o(i.Switch_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Switch_Init &rArr; GPIOPinTypeGPIOInput &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Switch_Init &rArr; GPIOPinTypeGPIOInput &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntPrioritySet
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntEnable
@@ -1726,7 +1726,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
 <P><STRONG><a name="[88]"></a>main</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = main &rArr; Display_Init &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = main &rArr; Display_Init &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Wide_0_init
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockSet

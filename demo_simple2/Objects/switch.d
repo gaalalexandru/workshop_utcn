@@ -1,7 +1,7 @@
 .\objects\switch.o: switch.c
 .\objects\switch.o: switch.h
-.\objects\switch.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\switch.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\switch.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\switch.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\switch.o: led.h
 .\objects\switch.o: timer.h
 .\objects\switch.o: display.h

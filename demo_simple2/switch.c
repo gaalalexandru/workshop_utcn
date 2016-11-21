@@ -20,7 +20,8 @@
 #define GPIOF_PRIO (0x01)  //GPIO Port F priority
 
 extern unsigned char Led_Color;
-
+unsigned long Simulated_Temperatur = 500;
+	
 void Switch_Init(void)
 {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);  //Enable clock on port F
@@ -50,7 +51,8 @@ void GPIOF_Handler(void) 	//GPIO port F ISR
 	if((switch_status&(GPIO_INT_PIN_0 | GPIO_INT_PIN_4)) == (GPIO_INT_PIN_0 | GPIO_INT_PIN_4))
 	{
 		//Both switches are pressed
-
+		Display_NewLine();
+		Display_String("Switch 1 & 2 pressed - PF4 & PF0");
 	}
 	else if(switch_status & GPIO_INT_PIN_4)
 	{
@@ -58,11 +60,15 @@ void GPIOF_Handler(void) 	//GPIO port F ISR
 		color_calculation = ((color_calculation + 1) % 8);	//will have values from 0 to 7
 		Led_Color = (color_calculation << 1);  //Change LED color, shift left by 1 bit because bit0 / PF0 is input
 		Display_NewLine();
-		Display_String("Color Changed!!!");
+		Display_String("Switch 1 pressed - PF4");
+		Simulated_Temperatur -= 10;
 	}
 	else if(switch_status & GPIO_INT_PIN_0)
 	{
-		//PF2
+		//PF0
+		Display_NewLine();
+		Display_String("Switch 2 pressed - PF0");
+		Simulated_Temperatur += 10;
 	}
 	TIMER_delay_No_Int(10);  //Kind of debounce switch
 }

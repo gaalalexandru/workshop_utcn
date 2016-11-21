@@ -11,7 +11,9 @@
 
 /*-------------------Macro Definitions----------------*/
 #define ADC0SS3_PRIO (0x02)  //Priority 2
-#define ADC_Ref_Voltage (33)	//33 represents 3v3, 50 represents 5v
+#define ADC_VREFP (3.3)  //2.5 Volt
+#define ADC_VREFN (0)  //8 Volt
+#define ADC_Ref_Voltage (ADC_VREFP - ADC_VREFN)	//33 represents 3v3, 50 represents 5v
 
 unsigned long Sensor_Temperature = 0;
 unsigned long Sensor_AnalogVoltage = 0;
@@ -38,20 +40,16 @@ void Sensor_Init(void) //Initialize temperature sensor input
 
 void ADC0SS3_Handler(void) {  //ADC0 Seq3 ISR
 
-	uint32_t Voltage;
+	uint32_t digital_value;
 	if(ADCIntStatus(ADC0_BASE, 3, false))
 	{
 		ADCIntClear(ADC0_BASE, 3);  //Clear interrupt flag
-		ADCSequenceDataGet(ADC0_BASE, 3, &Voltage);		
+		ADCSequenceDataGet(ADC0_BASE, 3, &digital_value);		
 		
 		IntMasterDisable();	//Global interrupt disable
-		//Sensor_Temperature = (1475 - ((75 * (ADC_Ref_Voltage) * Voltage) / 4096))/10;
-		Sensor_Temperature = 147.5 - ((75 * (3.3) * Voltage) / 4096);
-		Sensor_AnalogVoltage = Voltage;
+		Sensor_Temperature = (147.5 - ((75 * (ADC_Ref_Voltage) * digital_value) / 4095));
+		Sensor_AnalogVoltage = ((digital_value * ADC_Ref_Voltage)/4096)*1000;
 		IntMasterEnable();	//Global interrupt enable
-		
-		//Sensor_Temperature = Voltage; //Gaal Alexandru use this for RAW ADC value
-		
 		/*
 		The internal temperature sensor converts a temperature measurement into a voltage. This voltage
 		value, VTSENS, is given by the following equation (where TEMP is the temperature in °C):

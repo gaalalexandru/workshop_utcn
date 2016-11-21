@@ -85,14 +85,15 @@ void WTIMER0A_Handler(void)		//Wide Timer 0 A ISR
 		IntMasterDisable();	//Global interrupt disable
 		Display_Decimal(Sensor_Temperature);
 		IntMasterEnable();	//Global interrupt enable
-		Display_String(" *C");
+		//Display_Char(0x20);Display_Char(0xB0);Display_Char(0x43);
+		Display_String(" degC");
 		
 		Display_NewLine();
 		Display_String("Analog voltage: ");
 		IntMasterDisable();	//Global interrupt disable
 		Display_Decimal(Sensor_AnalogVoltage);
 		IntMasterEnable();	//Global interrupt enable
-		Display_String(" V");		
+		Display_String(" mV");		
 
 	}
 }
