@@ -9,6 +9,7 @@
 #include "driverlib/gpio.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/pin_map.h"
+#include "driverlib/timer.h"
 
 /*-------------------HW define Includes--------------*/
 #include "inc/hw_memmap.h"
@@ -19,7 +20,7 @@
 #define GPIO_PORTF_CR_R         (*((volatile unsigned long *)0x40025524))
 #define GPIOF_PRIO (0x01)  //GPIO Port F priority
 
-extern unsigned char Led_Color;
+
 unsigned long Simulated_Temperatur = 500;
 	
 void Switch_Init(void)
@@ -45,7 +46,7 @@ void Switch_Init(void)
 void GPIOF_Handler(void) 	//GPIO port F ISR
 {
 	unsigned long switch_status = 0;
-	static unsigned short color_calculation = 0;
+
 	switch_status = GPIOIntStatus(GPIO_PORTF_BASE,false);
 	GPIOIntClear(GPIO_PORTF_BASE,GPIO_INT_PIN_0 | GPIO_INT_PIN_4);
 	if((switch_status&(GPIO_INT_PIN_0 | GPIO_INT_PIN_4)) == (GPIO_INT_PIN_0 | GPIO_INT_PIN_4))
@@ -57,19 +58,18 @@ void GPIOF_Handler(void) 	//GPIO port F ISR
 	else if(switch_status & GPIO_INT_PIN_4)
 	{
 		//PF4
-		color_calculation = ((color_calculation + 1) % 8);	//will have values from 0 to 7
-		Led_Color = (color_calculation << 1);  //Change LED color, shift left by 1 bit because bit0 / PF0 is input
+		TimerEnable(TIMER2_BASE, TIMER_A);
 		Display_NewLine();
-		Display_String("Switch 1 pressed - PF4");
-		Simulated_Temperatur -= 10;
+		Display_String("SW1 pressed -> ");
+		GPIOIntDisable(GPIO_PORTF_BASE,GPIO_PIN_0);  //Disable GPIO pin interrupt	
 	}
 	else if(switch_status & GPIO_INT_PIN_0)
 	{
 		//PF0
+		TimerEnable(TIMER1_BASE, TIMER_A);
 		Display_NewLine();
-		Display_String("Switch 2 pressed - PF0");
-		Simulated_Temperatur += 10;
+		Display_String("SW2 pressed -> ");
+		GPIOIntDisable(GPIO_PORTF_BASE,GPIO_PIN_0);  //Disable GPIO pin interrupt		
 	}
-	TIMER_delay_No_Int(10);  //Kind of debounce switch
 }
 //EOF

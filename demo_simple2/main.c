@@ -26,12 +26,15 @@ int main(void)
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN); //80 Mhz
 	ui32SysClock = SysCtlClockGet();
 	RGB_Led_Init();
-	TIMER_Wide_0_init();
+	TIMER_Wide_0_Init();
+	TIMER_1_Init();
+	TIMER_2_Init();
 	Switch_Init();
 	Display_Init();
 	Sensor_Init();
 	IntMasterEnable();	//Global interrupt enable
-	  
+	
+	Display_NewLine();  
 	Display_NewLine();
 	Display_String("Clock: ");
 	Display_Decimal(ui32SysClock/1000000);
