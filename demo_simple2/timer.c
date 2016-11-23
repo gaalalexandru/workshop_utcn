@@ -22,7 +22,7 @@
 
 extern unsigned long Sensor_Temperature;
 extern unsigned long Sensor_AnalogVoltage;
-signed char PWM_DutyCycle = 0;
+signed char PWM_DutyCycle = 50;
 
 unsigned long TIMER_reload_calculator(unsigned long delay_time_ms)
 {
@@ -131,6 +131,7 @@ void WTIMER0A_Handler(void)		//Wide Timer 0 A ISR
 		Display_Decimal(Sensor_AnalogVoltage);
 		IntMasterEnable();	//Global interrupt enable
 		Display_String(" mV");
+		Display_NewLine();
 		Display_NewLine();
 	}
 }

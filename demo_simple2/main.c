@@ -41,6 +41,7 @@ int main(void)
 	Display_Decimal(Baud_Rate_Read);
 	Display_String(" bit/sec");
 	Display_NewLine();
+	Display_NewLine();
 	
 	while(ui32SysClock)  //Clock working :)
 	{

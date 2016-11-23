@@ -70,13 +70,14 @@ void RGB_PWM_Init(unsigned long PWM_Period)
 	PWMGenConfigure(PWM1_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN | PWM_GEN_MODE_NO_SYNC);	//Configure Generator 3
 	PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, PWM_Period);  //Configure Generator 3 period (frequency)
 	
-	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_5, (10*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_2))/100));//Set initial duty cycle 10%
+	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_5, (50*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_2))/100));//Set initial duty cycle 10%
 	PWMGenEnable(PWM1_BASE, PWM_GEN_2);  //Enable Generator 2
-	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6, (10*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_3))/100));//Set initial duty cycle 10%
+	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6, (50*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_3))/100));//Set initial duty cycle 10%
 	PWMGenEnable(PWM1_BASE, PWM_GEN_3);	 //Enable Generator 3
-	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, (10*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_3))/100));//Set initial duty cycle 10%
+	PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7, (99*(PWMGenPeriodGet(PWM1_BASE,PWM_GEN_3))/100));//Set initial duty cycle 10%
 	PWMGenEnable(PWM1_BASE, PWM_GEN_3);  //Enable Generator 3
-	
+	PWMOutputState(PWM1_BASE, PWM_OUT_5_BIT , PWM_enable);
+	PWMOutputState(PWM1_BASE, PWM_OUT_6_BIT , PWM_enable);
 }
 
 void RED_PWM_DutyCycle(unsigned long duty_cycle)
