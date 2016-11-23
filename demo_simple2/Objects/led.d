@@ -5,4 +5,5 @@
 .\objects\led.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h
 .\objects\led.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/gpio.h
 .\objects\led.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/pin_map.h
+.\objects\led.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/pwm.h
 .\objects\led.o: ..\..\TivaWare_C_Series-2.1.1.71\inc/hw_memmap.h

@@ -12,7 +12,12 @@
 
 /*-----------External function definisions-----------*/
 void RGB_Led_Init(void);
-void Led_toggle(unsigned char color);
+void RGB_PWM_Init(unsigned long PWM_Period);
+void RGB_Led_toggle(unsigned char color);
+
+void RED_PWM_DutyCycle(unsigned long duty_cycle);
+void GREEN_PWM_DutyCycle(unsigned long duty_cycle);
+void BLUE_PWM_DutyCycle(unsigned long duty_cycle);
 
 #endif
 //EOF

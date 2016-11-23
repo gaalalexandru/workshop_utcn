@@ -20,11 +20,11 @@
 #define TIMER1_PRIO (0x00)
 #define TIMER2_PRIO (0x00)
 
-extern unsigned char Led_Color;
 extern unsigned long Sensor_Temperature;
 extern unsigned long Sensor_AnalogVoltage;
+signed char PWM_DutyCycle = 0;
 
-static unsigned long TIMER_reload_calculator(unsigned long delay_time_ms)
+unsigned long TIMER_reload_calculator(unsigned long delay_time_ms)
 {
 	unsigned long clock_cycle_required = 0;
 	unsigned long clock_speed = 0;
@@ -116,9 +116,7 @@ void WTIMER0A_Handler(void)		//Wide Timer 0 A ISR
 	{
 		TimerIntClear(WTIMER0_BASE, TIMER_A);
 		timer_value = TimerValueGet(WTIMER0_BASE, TIMER_A);
-		
-		Led_toggle(Led_Color);
-		
+
 		ADCProcessorTrigger(ADC0_BASE, 3);  //Trigger Temperature sensor ADC
 		
 		Display_NewLine();
@@ -133,22 +131,39 @@ void WTIMER0A_Handler(void)		//Wide Timer 0 A ISR
 		Display_Decimal(Sensor_AnalogVoltage);
 		IntMasterEnable();	//Global interrupt enable
 		Display_String(" mV");
-		Display_NewLine();		
-
+		Display_NewLine();
 	}
 }
 
 void TIMER1A_Handler(void)  //Timer 1 A ISR used to debounce SW2
 {
 	unsigned long switch_value = 0;
-	Display_String("Timer 1 ISR launched -> ");
+	//Display_String("Timer 1 ISR launched -> ");
 	if(TimerIntStatus(TIMER1_BASE,false))
 	{
 		TimerDisable(TIMER1_BASE, TIMER_A);
 		TimerIntClear(TIMER1_BASE, TIMER_A);
 		switch_value = GPIOPinRead(GPIO_PORTF_BASE,GPIO_PIN_0);
 		if(!(switch_value & GPIO_PIN_0)) {
-			Display_String("SW2 state valid");			
+			if (PWM_DutyCycle >= 99)
+			{
+				Display_String("HOT enough!");
+				Display_NewLine();
+			}
+			else
+			{
+				Display_String("Getting hotter...");	
+				Display_String(" Simulated temperature: ");
+				Display_Decimal(PWM_DutyCycle);
+				Display_String(" % of 100%");
+				Display_NewLine();
+			}
+			PWM_DutyCycle += 2;
+			if (PWM_DutyCycle > 100) {
+				PWM_DutyCycle = 100;
+			}
+			RED_PWM_DutyCycle(PWM_DutyCycle);
+			BLUE_PWM_DutyCycle(100-PWM_DutyCycle);			
 		}
 	GPIOIntEnable(GPIO_PORTF_BASE, GPIO_INT_PIN_0);  //Enable GPIO pin interrupt		
 	}
@@ -157,17 +172,31 @@ void TIMER1A_Handler(void)  //Timer 1 A ISR used to debounce SW2
 void TIMER2A_Handler(void)  //Timer 2 A ISR used to debounce SW1
 {
 	unsigned long switch_value = 0;
-	static unsigned short color_calculation = 0;
-	Display_String("Timer 2 ISR launched -> ");
 	if(TimerIntStatus(TIMER2_BASE,false))
 	{
 		TimerDisable(TIMER2_BASE, TIMER_A);
 		TimerIntClear(TIMER2_BASE, TIMER_A);
 		switch_value = GPIOPinRead(GPIO_PORTF_BASE,GPIO_PIN_4);
 		if(!(switch_value & GPIO_PIN_4)) {
-			Display_String("SW1 state valid");			
-			color_calculation = ((color_calculation + 1) % 8);	//will have values from 0 to 7
-			Led_Color = (color_calculation << 1);  //Change LED color, shift left by 1 bit because bit0 / PF0 is input	
+			if (PWM_DutyCycle == 0)
+			{
+				Display_String("COLD enough!");
+				Display_NewLine();
+			}
+			else
+			{
+				Display_String("Getting colder...");
+				Display_String(" Simulated temperature: ");
+				Display_Decimal(PWM_DutyCycle);
+				Display_String(" % of 100%");				
+				Display_NewLine();
+			}
+			PWM_DutyCycle -= 2;
+			if (PWM_DutyCycle < 0) {
+				PWM_DutyCycle = 0;
+			}
+			RED_PWM_DutyCycle(PWM_DutyCycle);
+			BLUE_PWM_DutyCycle(100-PWM_DutyCycle);
 		}
 	GPIOIntEnable(GPIO_PORTF_BASE, GPIO_INT_PIN_0);  //Re-Enable GPIO pin interrupt		
 	}

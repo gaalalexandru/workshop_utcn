@@ -14,18 +14,15 @@
 #include "sensor.h"
 
 extern uint32_t Baud_Rate_Read;
-unsigned char Led_Color;
-
 
 int main(void)
 {
 	unsigned long ui32SysClock;
 	
 	IntMasterDisable();	//Global interrupt disable
-	Led_Color = 0;	//LED Off
 	SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN); //80 Mhz
 	ui32SysClock = SysCtlClockGet();
-	RGB_Led_Init();
+	RGB_PWM_Init(1000);
 	TIMER_Wide_0_Init();
 	TIMER_1_Init();
 	TIMER_2_Init();

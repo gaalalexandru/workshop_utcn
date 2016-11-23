@@ -1,28 +1,29 @@
 Dependencies for Project 'demo_simple', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5833FFD3)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x58356371)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x574E8476)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/interrupt.h)(0x5648E778)
-I (led.h)(0x582DCA1C)
-I (timer.h)(0x5833FF68)
+I (led.h)(0x58356004)
+I (timer.h)(0x58355A67)
 I (switch.h)(0x582DCA5C)
 I (display.h)(0x5832F243)
 I (sensor.h)(0x58332208)
-F (.\led.c)(0x5832F2D9)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
-I (led.h)(0x582DCA1C)
+F (.\led.c)(0x58356396)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (led.h)(0x58356004)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x574E8476)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/gpio.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/pin_map.h)(0x566AABD8)
+I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/pwm.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\inc/hw_memmap.h)(0x5710DA4C)
-F (.\switch.c)(0x58340047)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\switch.o --omf_browse .\objects\switch.crf --depend .\objects\switch.d)
+F (.\switch.c)(0x583566BD)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\switch.o --omf_browse .\objects\switch.crf --depend .\objects\switch.d)
 I (switch.h)(0x582DCA5C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x574E8476)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
-I (led.h)(0x582DCA1C)
-I (timer.h)(0x5833FF68)
+I (led.h)(0x58356004)
+I (timer.h)(0x58355A67)
 I (display.h)(0x5832F243)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/gpio.h)(0x5648E778)
@@ -31,11 +32,11 @@ I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/pin_map.h)(0x566AABD8)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/timer.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\inc/hw_memmap.h)(0x5710DA4C)
 I (..\..\TivaWare_C_Series-2.1.1.71\inc/hw_ints.h)(0x5648E7CD)
-F (.\timer.c)(0x58340046)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
-I (timer.h)(0x5833FF68)
+F (.\timer.c)(0x583566B2)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\TivaWare_C_Series-2.1.1.71\driverlib\rvmdk -I ..\..\TivaWare_C_Series-2.1.1.71\-IC:\Users\alexandru.gaal\Documents\GitHub\workshop_utcn\demo_simple2\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="521" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RA1-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+I (timer.h)(0x58355A67)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x574E8476)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
-I (led.h)(0x582DCA1C)
+I (led.h)(0x58356004)
 I (display.h)(0x5832F243)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h)(0x5648E778)
 I (..\..\TivaWare_C_Series-2.1.1.71\driverlib/interrupt.h)(0x5648E778)
