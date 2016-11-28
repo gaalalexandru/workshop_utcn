@@ -1,0 +1,14 @@
+.\generated\objects\timer_handler.o: application\timer_handler.c
+.\generated\objects\timer_handler.o: application\timer_handler.h
+.\generated\objects\timer_handler.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\generated\objects\timer_handler.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\generated\objects\timer_handler.o: application\led.h
+.\generated\objects\timer_handler.o: application\display.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/interrupt.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/timer.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/adc.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/pin_map.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/gpio.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\inc/hw_memmap.h
+.\generated\objects\timer_handler.o: ..\..\TivaWare_C_Series-2.1.1.71\inc/hw_ints.h

@@ -1,0 +1,10 @@
+.\generated\objects\sensor.o: application\sensor.c
+.\generated\objects\sensor.o: application\sensor.h
+.\generated\objects\sensor.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\generated\objects\sensor.o: F:\0_Tools\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\generated\objects\sensor.o: .\OS\os_core.h
+.\generated\objects\sensor.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/adc.h
+.\generated\objects\sensor.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/interrupt.h
+.\generated\objects\sensor.o: ..\..\TivaWare_C_Series-2.1.1.71\driverlib/sysctl.h
+.\generated\objects\sensor.o: ..\..\TivaWare_C_Series-2.1.1.71\inc/hw_memmap.h
+.\generated\objects\sensor.o: ..\..\TivaWare_C_Series-2.1.1.71\inc/hw_ints.h
